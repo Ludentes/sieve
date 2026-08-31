@@ -1,10 +1,5 @@
 import { defineAgent } from "eve"
 import { mockModel } from "eve/evals"
-import { takeHostLease } from "../admission/host-lease"
-
-// One host, one lease. A second process refuses here rather than corrupting
-// the first one's work an hour from now.
-takeHostLease()
 
 /**
  * The default model is a scripted mock, so this repository runs with no API
@@ -13,13 +8,18 @@ takeHostLease()
  * The script is a deterministic tool loop: call the guarded tool first, then
  * report whatever came back. When admission refuses, that report is the point
  * of the whole reference.
+ *
+ * The tool's name is its FILENAME — `edit-workspace`, not `edit_workspace`.
+ * Getting it wrong does not fail: eve hands the model a NoSuchToolError, the
+ * script dutifully reports it, and every session looks admitted because the
+ * guard was never reached.
  */
 const scripted = mockModel({
   modelId: "sieve-script",
   provider: "sieve",
   respond: ({ toolResults }) =>
     toolResults.length === 0
-      ? { toolCalls: [{ name: "edit_workspace", input: { change: "rename" } }] }
+      ? { toolCalls: [{ name: "edit-workspace", input: { change: "rename" } }] }
       : `Tool said: ${JSON.stringify(toolResults[0]?.output)}`,
 })
 
