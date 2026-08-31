@@ -1,5 +1,10 @@
 import { defineAgent } from "eve"
 import { mockModel } from "eve/evals"
+import { takeHostLease } from "../admission/host-lease"
+
+// One host, one lease. A second process refuses here rather than corrupting
+// the first one's work an hour from now.
+takeHostLease()
 
 /**
  * The default model is a scripted mock, so this repository runs with no API
