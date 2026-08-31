@@ -1,6 +1,6 @@
 import { defineTool } from "eve/tools"
 import { z } from "zod"
-import { guard } from "../../admission/guard"
+import { guard } from "../../admission/guard.ts"
 
 /**
  * A tool declares its OWN needs. Sourcing them from a scenario would make the

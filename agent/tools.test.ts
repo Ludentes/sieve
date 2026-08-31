@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { expect, it } from "vitest"
-import callProvider, { needs as providerNeeds } from "./tools/call-provider"
-import { needs as workspaceNeeds } from "./tools/edit-workspace"
+import callProvider, { needs as providerNeeds } from "./tools/call-provider.ts"
+import { needs as workspaceNeeds } from "./tools/edit-workspace.ts"
 
 const ctx = { session: { id: "s-1" } } as never
 

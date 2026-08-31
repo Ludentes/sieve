@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { expect, it } from "vitest"
-import { guard } from "../../admission/guard"
+import { guard } from "../../admission/guard.ts"
 
 it("the second session is refused by name, then admitted after release", async () => {
   const transcript: string[] = []

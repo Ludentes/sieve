@@ -1,6 +1,6 @@
 import { defineTool } from "eve/tools"
 import { z } from "zod"
-import { guard } from "../../admission/guard"
+import { guard } from "../../admission/guard.ts"
 
 /** One resource, for the reason given in edit-workspace.ts. */
 export const needs = ["provider"] as const

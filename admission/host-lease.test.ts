@@ -4,7 +4,7 @@ import { tmpdir } from "node:os"
 import path from "node:path"
 import { beforeEach, expect, it } from "vitest"
 import { NoPermit } from "@ludentes/marshal/permit"
-import { takeHostLease } from "./host-lease"
+import { takeHostLease } from "./host-lease.ts"
 
 let dir: string
 beforeEach(() => {

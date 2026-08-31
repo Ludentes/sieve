@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { expect, it } from "vitest"
-import { guard, ledger } from "./guard"
+import { guard, ledger } from "./guard.ts"
 
 it("admits when nothing holds the resource", async () => {
   const r = await guard(

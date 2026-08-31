@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { expect, it } from "vitest"
-import { render, type Event } from "./view"
+import { render, type Event } from "./view.ts"
 
 it("draws a timeline naming the holder on a refusal", () => {
   const events: Event[] = [

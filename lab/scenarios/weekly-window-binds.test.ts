@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { expect, it } from "vitest"
 import { pick } from "@ludentes/marshal/pick"
-import { budgetWindows, cost } from "../../admission/resources"
+import { budgetWindows, cost } from "../../admission/resources.ts"
 
 it("the week binds while the 5-hour window is wide open", () => {
   const now = Date.now()

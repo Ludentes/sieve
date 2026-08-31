@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { beforeEach, expect, it } from "vitest"
 import type { Holder } from "@ludentes/marshal/types"
-import { Ledger } from "./ledger"
+import { Ledger } from "./ledger.ts"
 
 const a: Holder = { id: "s-a", what: "editing", since: "t0" }
 const b: Holder = { id: "s-b", what: "editing", since: "t1" }

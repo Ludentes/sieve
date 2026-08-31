@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { expect, it } from "vitest"
-import agent from "./agent"
+import agent from "./agent.ts"
 
 it("defaults to a model that needs no credential", () => {
   expect(agent.model).toBeDefined()

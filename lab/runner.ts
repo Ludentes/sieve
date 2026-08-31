@@ -1,5 +1,5 @@
 import { Client } from "eve/client"
-import type { Event } from "./view"
+import type { Event } from "./view.ts"
 
 export type Step = { session: string; message: string; after?: number }
 

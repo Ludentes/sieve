@@ -1,13 +1,13 @@
 import { pick } from "@ludentes/marshal/pick"
 import type { Blocked, Holder, Job, RankFn } from "@ludentes/marshal/types"
-import { Ledger } from "./ledger"
+import { Ledger } from "./ledger.ts"
 import {
   BUDGET,
   budgetWindows,
   cost,
   EXCLUSIVE,
   unavailableUntil,
-} from "./resources"
+} from "./resources.ts"
 
 /**
  * Eve on one side, Marshal on the other. The only file that knows both, and the
