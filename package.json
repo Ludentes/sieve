@@ -13,7 +13,8 @@
     "dev": "eve dev",
     "eval": "eve eval",
     "start": "eve start",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "demo": "node lab/demo.ts"
   },
   "dependencies": {
     "@ludentes/marshal": "github:Ludentes/marshal",
