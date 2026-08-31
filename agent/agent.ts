@@ -20,4 +20,13 @@ const scripted = mockModel({
 
 export default defineAgent({
   model: process.env.MODEL_ID ?? scripted,
+  /**
+   * `eve build` compiles compaction ahead of time, and it sizes the trigger
+   * from the primary model's context window — which it looks up in the AI
+   * Gateway catalogue. A mock model is in no catalogue, so without this
+   * override the build fails before it ever reaches a tool. Stating the
+   * number is the documented escape hatch, and it keeps `pnpm build` working
+   * for a fork that has no key.
+   */
+  modelContextWindowTokens: 128_000,
 })
